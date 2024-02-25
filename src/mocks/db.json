@@ -1,0 +1,168 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Cemento",
+      "description": "Saco de cemento Portland para construcción",
+      "price": "25.00€"
+    },
+    {
+      "id": "2",
+      "name": "Ladrillos",
+      "description": "Paquete de ladrillos cerámicos para edificacion",
+      "price": "1.20€"
+    },
+    {
+      "id": "3",
+      "name": "Madera para construcción",
+      "description": "Tablones de madera tratada para uso en proyectos de construcción",
+      "price": "1.20€"
+    },
+    {
+      "id": "4",
+      "name": "Arena",
+      "description": "Arena para construccion",
+      "price": "10.00€"
+    }
+  ],
+  "orders": [
+    {
+      "id": "1",
+      "creationDate": "2024-02-19 12:30:00",
+      "totalProducts": 2,
+      "priceWithoutIVA": "50.00€",
+      "priceIVA": "60.50€",
+      "status": "Pendiente",
+      "products": [
+        {
+          "id": "1",
+          "name": "Cemento",
+          "description": "Saco de cemento Portland para construcción",
+          "price": "25.00€"
+        },
+        {
+          "id": "2",
+          "name": "Ladrillos",
+          "description": "Paquete de ladrillos cerámicos para edificacion",
+          "price": "1.20€"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "creationDate": "2024-02-19 14:45:00",
+      "totalProducts": 1,
+      "priceWithoutIVA": "1.20€",
+      "priceIVA": "1.38€",
+      "status": "Anulado",
+      "products": [
+        {
+          "id": "1",
+          "name": "Cemento",
+          "description": "Saco de cemento Portland para construcción",
+          "price": "25.00€"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "creationDate": "2024-02-19 16:00:00",
+      "totalProducts": 3,
+      "priceWithoutIVA": "44.10€",
+      "priceIVA": "50.76€",
+      "status": "Cobrado",
+      "products": [
+        {
+          "id": "1",
+          "name": "Cemento",
+          "description": "Saco de cemento Portland para construcción",
+          "price": "25.00€"
+        },
+        {
+          "id": "2",
+          "name": "Ladrillos",
+          "description": "Paquete de ladrillos cerámicos para edificacion",
+          "price": "1.20€"
+        },
+        {
+          "id": "2",
+          "name": "Ladrillos",
+          "description": "Paquete de ladrillos cerámicos para edificacion",
+          "price": "1.20€"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "creationDate": "2024-02-25 14:49:35",
+      "totalProducts": 2,
+      "priceWithoutIVA": "21,65€",
+      "priceIVA": "26,20€",
+      "status": "Pendiente",
+      "products": [
+        {
+          "id": "1",
+          "name": "Cemento",
+          "description": "Saco de cemento Portland para construcción",
+          "price": "25.00€",
+          "quantity": 1
+        },
+        {
+          "id": "2",
+          "name": "Ladrillos",
+          "description": "Paquete de ladrillos cerámicos para edificacion",
+          "price": "1.20€",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "creationDate": "2024-02-25 16:19:21",
+      "totalProducts": 2,
+      "priceWithoutIVA": "21,65€",
+      "priceIVA": "26,20€",
+      "status": "Pendiente",
+      "products": [
+        {
+          "id": "1",
+          "name": "Cemento",
+          "description": "Saco de cemento Portland para construcción",
+          "price": "25.00€",
+          "quantity": 1
+        },
+        {
+          "id": "2",
+          "name": "Ladrillos",
+          "description": "Paquete de ladrillos cerámicos para edificacion",
+          "price": "1.20€",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "creationDate": "2024-02-25 17:32:01",
+      "totalProducts": 2,
+      "priceWithoutIVA": "21,65€",
+      "priceIVA": "26,20€",
+      "status": "Pendiente",
+      "products": [
+        {
+          "id": "1",
+          "name": "Cemento",
+          "description": "Saco de cemento Portland para construcción",
+          "price": "25.00€",
+          "quantity": 1
+        },
+        {
+          "id": "2",
+          "name": "Ladrillos",
+          "description": "Paquete de ladrillos cerámicos para edificacion",
+          "price": "1.20€",
+          "quantity": 1
+        }
+      ]
+    }
+  ]
+}
