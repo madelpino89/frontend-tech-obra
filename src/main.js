@@ -1,5 +1,6 @@
 
 import "@mozaic-ds/vue-3/dist/mozaic-vue.bricoman.css";
+//import "@mozaic-ds/tokens/build/scss/_tokens.scss";
 import './assets/main.scss'
 import MozaicVue from '@mozaic-ds/vue-3'
 import { createApp } from 'vue'

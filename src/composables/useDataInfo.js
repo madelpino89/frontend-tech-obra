@@ -13,7 +13,8 @@ const useDataInfo = () => {
     const selectedOrders = ref([]);
     const productsAddedToOrder = ref([]);
     const selectedProductsToAdd = ref([]);
-    const showAddModal = ref(false);
+    const showAddLayer = ref(false);
+    const showRemoveModal = ref(false);
     const totalPriceOrder = ref(0);
 
     const getProducts = async () => {
@@ -57,6 +58,7 @@ const useDataInfo = () => {
         selectedOrders.value.forEach((order) => {
             removeOrder(order.id)
         })
+        showRemoveModal.value = false;
     };
     
     const removeOrder = async (orderId) => {
@@ -92,7 +94,7 @@ const useDataInfo = () => {
             } else {
                 orders.value = [...orders.value, order]
                 resetValuesForAddOrder()
-                showAddModal.value = false
+                showAddLayer.value = false
             }
         } catch (err) {
             error.value = err.message
@@ -182,7 +184,7 @@ const useDataInfo = () => {
         productsToAdd,
         productsAddedToOrder,
         selectedProductsToAdd,
-        showAddModal,
+        showAddLayer,
         totalPriceOrder,
         getProducts,
         getOrders,
@@ -193,7 +195,9 @@ const useDataInfo = () => {
         decreaseQuantity,
         getTypeStaus,
         addNewOrder,
-        updateSelection
+        updateSelection,
+        selectedOrders,
+        showRemoveModal
     }
 }
 

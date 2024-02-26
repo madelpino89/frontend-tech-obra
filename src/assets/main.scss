@@ -1,10 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
-// In your global scss file
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import "./tokens.scss";
 
 body {
-  font-family: 'Roboto', sans-serif !important;
+  font-family: Inter, sans-serif !important;
 }
 
 body {
@@ -26,18 +25,22 @@ body {
   margin: 0 auto;
   padding: 2rem;
   font-weight: normal;
-  /* background-color: $color-secondary-blue-100; */
 }
 
 .right-align {
   float: right;
 }
 
+.header-bg-primary {
+  background-color: $color-primary-02-400;
+  color: $color-grey-000;
+}
+
 
 
 @media (min-width: 1024px) {
   body {
-    display: flex;
+    display: block;
   }
 
   #app {

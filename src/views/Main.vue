@@ -1,6 +1,5 @@
 <script setup>
 import { RouterView } from 'vue-router'
-import Header from '@/components/Header.vue'
 import { ref, onMounted, watch } from 'vue'
 import { MAutocomplete, MDataTableV2, MField } from '@mozaic-ds/vue-3'
 import useUtils from '@/composables/useUtils'
@@ -13,7 +12,7 @@ const {
   productsToAdd,
   productsAddedToOrder,
   selectedProductsToAdd,
-  showAddModal,
+  showAddLayer,
   totalPriceOrder,
   getProducts,
   getOrders,
@@ -24,7 +23,9 @@ const {
   decreaseQuantity,
   addNewOrder,
   updateSelection,
-  getTypeStaus
+  getTypeStaus,
+  selectedOrders,
+  showRemoveModal
 } = useDataInfo()
 
 const headers = ref([
@@ -40,6 +41,7 @@ const headersProducts = ref([
   { label: 'id', value: 'id' },
   { label: 'Nombre', value: 'name' },
   { label: 'Descripción', value: 'description' },
+  { label: 'Cantidad', value: 'quantity' },
   { label: 'Precio', value: 'price' }
 ])
 
@@ -80,12 +82,28 @@ onMounted(async () => {
 
 <template>
   <div class="container">
+    <MModal modal-title="Eliminar orden" :open="showRemoveModal" @update:open="showRemoveModal = !showRemoveModal">
+      <template v-slot:default>
+        <div class="example-modal-content">
+          <p v-if="selectedOrders.length > 0">
+            ¿Estás seguro de que quieres eliminar las ordenes seleccionadas?
+          </p>
+          <p v-else>
+            Para eliminar una o más ordenes debe seleccionarlas primero.
+          </p>
+        </div>
+      </template>
+      <template v-slot:footer>
+          <MButton v-if="selectedOrders.length > 0" label="Eliminar seleccionadas" @click="removeOrders" />
+          <MButton label="Salir" theme="bordered" @click="showRemoveModal = false"/>
+      </template>
+    </MModal>
     <MLayer
       extendend
       layer-title="Nueva orden"
       title="Datos de nueva orden"
-      :open="showAddModal"
-      @update:open="showAddModal = !showAddModal"
+      :open="showAddLayer"
+      @update:open="showAddLayer = !showAddLayer"
     >
       <template v-slot:default>
         <div id="formAddOrder">
@@ -124,14 +142,14 @@ onMounted(async () => {
               />
             </template>
           </MDataTableV2>
-          <MBadge type="success" size="xl" class="mu-mt-100 right-align">
+          <MBadge  v-if="selectedProductsToAdd.length > 0" type="success" size="xl" class="mu-mt-100 right-align">
             {{ `Precio total del pedido: ${eurFormat(totalPriceOrder)}` }}
           </MBadge>
         </div>
       </template>
       <template v-slot:footer>
         <MButton label="Añadir orden" @click="addNewOrder" />
-        <MButton label="Cancelar" theme="bordered" @click="showAddModal = false" />
+        <MButton label="Cancelar" theme="bordered" @click="showAddLayer = false" />
       </template>
     </MLayer>
 
@@ -151,12 +169,18 @@ onMounted(async () => {
             <MButton icon="DownloadWeb24" theme="bordered-neutral" size="s" />
           </template>
           <template #actions>
-            <MButton label="Add new product" size="s" @click="showAddModal = true" />
             <MButton
-              label="Delete product"
+              icon="ControlMore48"
+              label="Agregar orden"
+              size="s"
+              @click="showAddLayer = true"
+            />
+            <MButton
+              icon="PublishTrashbin48"
+              label="Borrar orden"
               theme="bordered-danger"
               size="s"
-              @click="removeOrders()"
+              @click="showRemoveModal = true"
             />
           </template>
         </MDataTableTop>
@@ -181,4 +205,3 @@ onMounted(async () => {
 </template>
 
 <style scoped></style>
-
