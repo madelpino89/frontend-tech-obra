@@ -39,6 +39,6 @@ npm run dev
 
 # Notas importantes
 
-> Esta aplicación forma parte de un examen técnico porpuesto por OBRAMAT qué no se ha podido cumplimentar teniendo en cuenta que entre sus principales objetivos se debía conectar este frontend con un API REST creado con Java y Spring Boot.
+> Esta aplicación forma parte de un examen técnico propuesto por OBRAMAT qué no se ha podido cumplimentar teniendo en cuenta que entre sus principales objetivos se debía conectar este frontend con un API REST creado con Java y Spring Boot.
 
 > Teniendo en cuenta que no ha sido posible terminar el backend se ha decidido utilizar json-server para servir los datos necesarios para crear un frontal que su principal valor añadido está el uso del sistema de diseño Mozaic creado por ADEO y utilizando en mas de 3000 repositorios dentro de la organización según sus propios datos [Get inspired](https://adeo.github.io/mozaic-vue/?path=/docs/get-inspired--docs)
